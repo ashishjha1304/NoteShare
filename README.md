@@ -9,14 +9,15 @@ A full-stack web application for students to share, discover, and download study
 ## ✨ Features
 
 - 🔐 **Authentication** — Sign up, login with Supabase Auth
-- 📤 **Upload Notes** — Upload PDF study materials
-- 📚 **Browse by Subject** — Organized by subject categories
+- 📤 **High-Capacity Uploads** — Support for PDFs from **2KB up to 200MB**
+- 📚 **Smart Categorization** — Create new subjects on the fly or select existing ones
 - 🔍 **Search** — Search notes by title, subject, or keywords
 - ⬇️ **Download** — Download PDFs with download tracking
 - ⭐ **Ratings** — Rate notes (1-5 stars)
 - 💬 **Comments** — Discuss and review notes
 - 👑 **Admin Panel** — Manage notes, users, view stats
-- 📱 **Responsive** — Works on all devices
+- 🌓 **Dynamic Theme** — Optimized Light and Dark modes with glassmorphism
+- 📱 **Responsive** — Full mobile & desktop compatibility
 
 ---
 
