@@ -73,7 +73,7 @@ export default function Signup() {
                                         onChange={(e) => setName(e.target.value)}
                                         placeholder="John Doe"
                                         required
-                                        className="w-full pl-12 pr-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
+                                        className="w-full pl-12 pr-4 py-3 bg-surface-100/60 dark:bg-surface-800/60 border border-surface-300/50 dark:border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-500 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                                     />
                                 </div>
                             </div>
@@ -88,7 +88,7 @@ export default function Signup() {
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="you@example.com"
                                         required
-                                        className="w-full pl-12 pr-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
+                                        className="w-full pl-12 pr-4 py-3 bg-surface-100/60 dark:bg-surface-800/60 border border-surface-300/50 dark:border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-500 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                                     />
                                 </div>
                             </div>
@@ -103,7 +103,7 @@ export default function Signup() {
                                         onChange={(e) => setPassword(e.target.value)}
                                         placeholder="Minimum 6 characters"
                                         required
-                                        className="w-full pl-12 pr-12 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
+                                        className="w-full pl-12 pr-12 py-3 bg-surface-100/60 dark:bg-surface-800/60 border border-surface-300/50 dark:border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-500 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                                     />
                                     <button
                                         type="button"

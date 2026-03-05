@@ -3,7 +3,7 @@ import { HiOutlineHeart } from "react-icons/hi";
 
 export default function Footer() {
     return (
-        <footer className="relative mt-auto border-t border-surface-800/50 bg-surface-950/80 backdrop-blur-sm">
+        <footer className="relative mt-auto border-t border-surface-300/50 dark:border-surface-800/50 bg-surface-50/80 dark:bg-surface-950/80 backdrop-blur-sm">
             {/* Gradient top line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
 
@@ -46,7 +46,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom */}
-                <div className="mt-10 pt-6 border-t border-surface-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="mt-10 pt-6 border-t border-surface-300/50 dark:border-surface-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-sm">
                         © {new Date().getFullYear()} NoteShare. All rights reserved.
                     </p>

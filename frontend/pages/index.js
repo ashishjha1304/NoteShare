@@ -124,7 +124,7 @@ export default function Home() {
                         Search Results ({searchResults.length})
                     </h2>
                     {searchResults.length === 0 ? (
-                        <div className="text-center py-12 bg-surface-900/50 rounded-2xl border border-surface-800/50">
+                        <div className="text-center py-12 bg-surface-100/50 dark:bg-surface-900/50 rounded-2xl border border-surface-300/50 dark:border-surface-800/50">
                             <p className="text-surface-600 dark:text-surface-400">No notes found. Try a different search term.</p>
                         </div>
                     ) : (
@@ -154,7 +154,7 @@ export default function Home() {
                         return (
                             <Link key={subject.id} href={`/notes/${encodeURIComponent(subject.name)}`}>
                                 <div
-                                    className="group relative overflow-hidden rounded-2xl p-6 bg-surface-900/60 border border-surface-800/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/5 cursor-pointer animate-fade-in"
+                                    className="group relative overflow-hidden rounded-2xl p-6 bg-surface-100/60 dark:bg-surface-900/60 border border-surface-300/50 dark:border-surface-800/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/5 cursor-pointer animate-fade-in"
                                     style={{ animationDelay: `${i * 100}ms`, animationFillMode: "both" }}
                                 >
                                     <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${meta.gradient} opacity-5 group-hover:opacity-10 rounded-bl-full transition-opacity`} />
@@ -242,7 +242,7 @@ export default function Home() {
                         </Link>
                         <Link
                             href="/notes"
-                            className="px-8 py-3.5 bg-surface-800/60 hover:bg-surface-700/80 text-surface-900 dark:text-white font-medium rounded-xl border border-surface-700/50 hover:border-surface-300 dark:hover:border-surface-600 transition-all"
+                            className="px-8 py-3.5 bg-surface-200/60 dark:bg-surface-800/60 hover:bg-surface-300/60 dark:hover:bg-surface-700/80 text-surface-900 dark:text-white font-medium rounded-xl border border-surface-300/50 dark:border-surface-700/50 hover:border-surface-400/50 dark:hover:border-surface-600 transition-all"
                         >
                             Browse Notes
                         </Link>
