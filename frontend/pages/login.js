@@ -51,43 +51,43 @@ export default function Login() {
                             <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4 shadow-lg shadow-primary-500/30">
                                 N
                             </div>
-                            <h1 className="text-2xl font-display font-bold text-white">Welcome back</h1>
-                            <p className="text-surface-400 text-sm mt-1">Log in to your NoteShare account</p>
+                            <h1 className="text-2xl font-display font-bold text-surface-900 dark:text-white">Welcome back</h1>
+                            <p className="text-surface-600 dark:text-surface-400 text-sm mt-1">Log in to your NoteShare account</p>
                         </div>
 
                         {/* Form */}
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div>
-                                <label className="block text-sm font-medium text-surface-300 mb-2">Email</label>
+                                <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">Email</label>
                                 <div className="relative">
-                                    <HiOutlineMail className="absolute left-4 top-1/2 -translate-y-1/2 text-surface-500 w-5 h-5" />
+                                    <HiOutlineMail className="absolute left-4 top-1/2 -translate-y-1/2 text-surface-600 dark:text-surface-400 dark:text-surface-500 w-5 h-5" />
                                     <input
                                         type="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="you@example.com"
                                         required
-                                        className="w-full pl-12 pr-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-white placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
+                                        className="w-full pl-12 pr-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                                     />
                                 </div>
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-surface-300 mb-2">Password</label>
+                                <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">Password</label>
                                 <div className="relative">
-                                    <HiOutlineLockClosed className="absolute left-4 top-1/2 -translate-y-1/2 text-surface-500 w-5 h-5" />
+                                    <HiOutlineLockClosed className="absolute left-4 top-1/2 -translate-y-1/2 text-surface-600 dark:text-surface-400 dark:text-surface-500 w-5 h-5" />
                                     <input
                                         type={showPassword ? "text" : "password"}
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                         placeholder="••••••••"
                                         required
-                                        className="w-full pl-12 pr-12 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-white placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
+                                        className="w-full pl-12 pr-12 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                                     />
                                     <button
                                         type="button"
                                         onClick={() => setShowPassword(!showPassword)}
-                                        className="absolute right-4 top-1/2 -translate-y-1/2 text-surface-500 hover:text-surface-300 transition-colors"
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 text-surface-600 dark:text-surface-400 dark:text-surface-500 hover:text-surface-700 dark:text-surface-300 transition-colors"
                                     >
                                         {showPassword ? <HiOutlineEyeOff className="w-5 h-5" /> : <HiOutlineEye className="w-5 h-5" />}
                                     </button>
@@ -112,7 +112,7 @@ export default function Login() {
 
                         {/* Divider */}
                         <div className="mt-6 text-center">
-                            <p className="text-surface-500 text-sm">
+                            <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-sm">
                                 Don&apos;t have an account?{" "}
                                 <Link href="/signup" className="text-primary-400 hover:text-primary-300 font-medium transition-colors">
                                     Sign up

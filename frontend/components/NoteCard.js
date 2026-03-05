@@ -40,17 +40,17 @@ export default function NoteCard({ note, index = 0 }) {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-primary-300 transition-colors line-clamp-2">
+                <h3 className="text-lg font-semibold text-surface-900 dark:text-white mb-2 group-hover:text-primary-300 transition-colors line-clamp-2">
                     {note.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-surface-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                <p className="text-surface-600 dark:text-surface-400 text-sm leading-relaxed mb-4 line-clamp-2">
                     {note.description}
                 </p>
 
                 {/* Meta info */}
-                <div className="flex items-center justify-between text-xs text-surface-500">
+                <div className="flex items-center justify-between text-xs text-surface-600 dark:text-surface-400 dark:text-surface-500">
                     <div className="flex items-center gap-3">
                         <span className="flex items-center gap-1">
                             <HiOutlineBookOpen className={`w-3.5 h-3.5 ${colors.icon}`} />

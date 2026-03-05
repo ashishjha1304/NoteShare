@@ -87,7 +87,7 @@ export default function UploadForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
             {/* Title */}
             <div>
-                <label className="block text-sm font-medium text-surface-300 mb-2">
+                <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
                     Title <span className="text-red-400">*</span>
                 </label>
                 <input
@@ -95,14 +95,14 @@ export default function UploadForm() {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="e.g. Introduction to Algorithms"
-                    className="w-full px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-white placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
+                    className="w-full px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                     required
                 />
             </div>
 
             {/* Description */}
             <div>
-                <label className="block text-sm font-medium text-surface-300 mb-2">
+                <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
                     Description
                 </label>
                 <textarea
@@ -110,31 +110,31 @@ export default function UploadForm() {
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Brief description of the notes..."
                     rows={3}
-                    className="w-full px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-white placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all resize-none"
+                    className="w-full px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all resize-none"
                 />
             </div>
 
             {/* Subject */}
             <div>
-                <label className="block text-sm font-medium text-surface-300 mb-2">
+                <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
                     Subject <span className="text-red-400">*</span>
                 </label>
                 <select
                     value={subjectId}
                     onChange={(e) => setSubjectId(e.target.value)}
-                    className="w-full px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-white focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all appearance-none"
+                    className="w-full px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all appearance-none"
                     required
                 >
-                    <option value="" className="bg-surface-900">Select a subject</option>
+                    <option value="" className="bg-white dark:bg-surface-900">Select a subject</option>
                     {subjects.map((s) => (
-                        <option key={s.id} value={s.id} className="bg-surface-900">{s.name}</option>
+                        <option key={s.id} value={s.id} className="bg-white dark:bg-surface-900">{s.name}</option>
                     ))}
                 </select>
             </div>
 
             {/* File Upload */}
             <div>
-                <label className="block text-sm font-medium text-surface-300 mb-2">
+                <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
                     PDF File <span className="text-red-400">*</span>
                 </label>
                 <div
@@ -146,7 +146,7 @@ export default function UploadForm() {
                             ? "border-primary-500 bg-primary-500/10"
                             : file
                                 ? "border-emerald-500/50 bg-emerald-500/5"
-                                : "border-surface-700/50 hover:border-surface-600 bg-surface-800/30"
+                                : "border-surface-700/50 hover:border-surface-300 dark:hover:border-surface-600 bg-surface-800/30"
                         }`}
                 >
                     <input
@@ -159,24 +159,24 @@ export default function UploadForm() {
                         <div className="flex items-center justify-center gap-3">
                             <HiOutlineDocumentText className="w-8 h-8 text-emerald-400" />
                             <div className="text-left">
-                                <p className="text-white font-medium">{file.name}</p>
-                                <p className="text-surface-400 text-sm">{(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                                <p className="text-surface-900 dark:text-white font-medium">{file.name}</p>
+                                <p className="text-surface-600 dark:text-surface-400 text-sm">{(file.size / 1024 / 1024).toFixed(2)} MB</p>
                             </div>
                             <button
                                 type="button"
                                 onClick={(e) => { e.stopPropagation(); setFile(null); }}
-                                className="ml-3 p-1 text-surface-400 hover:text-red-400 transition-colors"
+                                className="ml-3 p-1 text-surface-600 dark:text-surface-400 hover:text-red-400 transition-colors"
                             >
                                 <HiOutlineX className="w-5 h-5" />
                             </button>
                         </div>
                     ) : (
                         <div>
-                            <HiOutlineCloudUpload className="w-10 h-10 text-surface-500 mx-auto mb-3" />
-                            <p className="text-surface-400 text-sm">
+                            <HiOutlineCloudUpload className="w-10 h-10 text-surface-600 dark:text-surface-400 dark:text-surface-500 mx-auto mb-3" />
+                            <p className="text-surface-600 dark:text-surface-400 text-sm">
                                 <span className="text-primary-400 font-medium">Click to upload</span> or drag and drop
                             </p>
-                            <p className="text-surface-500 text-xs mt-1">PDF files only (max 10MB)</p>
+                            <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-xs mt-1">PDF files only (max 10MB)</p>
                         </div>
                     )}
                 </div>

@@ -79,7 +79,7 @@ export default function NoteDetail() {
     if (!note) {
         return (
             <div className="max-w-7xl mx-auto px-4 py-20 text-center">
-                <h2 className="text-2xl font-display font-bold text-white">Note not found</h2>
+                <h2 className="text-2xl font-display font-bold text-surface-900 dark:text-white">Note not found</h2>
                 <Link href="/notes" className="text-primary-400 hover:text-primary-300 mt-4 inline-block">
                     ← Back to notes
                 </Link>
@@ -102,7 +102,7 @@ export default function NoteDetail() {
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
                 {/* Back link */}
-                <Link href="/notes" className="inline-flex items-center gap-2 text-surface-400 hover:text-white text-sm mb-6 transition-colors">
+                <Link href="/notes" className="inline-flex items-center gap-2 text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:text-white text-sm mb-6 transition-colors">
                     <HiOutlineArrowLeft className="w-4 h-4" />
                     Back to notes
                 </Link>
@@ -115,17 +115,17 @@ export default function NoteDetail() {
                     </span>
 
                     {/* Title */}
-                    <h1 className="text-2xl sm:text-3xl font-display font-bold text-white mb-4">
+                    <h1 className="text-2xl sm:text-3xl font-display font-bold text-surface-900 dark:text-white mb-4">
                         {note.title}
                     </h1>
 
                     {/* Description */}
-                    <p className="text-surface-400 leading-relaxed mb-6">
+                    <p className="text-surface-600 dark:text-surface-400 leading-relaxed mb-6">
                         {note.description}
                     </p>
 
                     {/* Meta */}
-                    <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-surface-400 mb-6 pb-6 border-b border-surface-800/50">
+                    <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-surface-600 dark:text-surface-400 mb-6 pb-6 border-b border-surface-800/50">
                         <span className="flex items-center gap-1.5">
                             <HiOutlineUserCircle className="w-4 h-4 text-primary-400" />
                             {note.users?.name || "Anonymous"}
@@ -167,7 +167,7 @@ export default function NoteDetail() {
 
                         {/* Rating */}
                         <div className="flex items-center gap-3">
-                            <span className="text-sm text-surface-400">Rate this note:</span>
+                            <span className="text-sm text-surface-600 dark:text-surface-400">Rate this note:</span>
                             <RatingStars
                                 currentRating={note.rating || 0}
                                 onRate={handleRate}
@@ -179,7 +179,7 @@ export default function NoteDetail() {
 
                 {/* PDF Preview */}
                 <div className="glass rounded-3xl p-6 sm:p-8 mb-8">
-                    <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                    <h2 className="text-lg font-semibold text-surface-900 dark:text-white mb-4 flex items-center gap-2">
                         <HiOutlineDocumentText className="text-primary-400" />
                         PDF Preview
                     </h2>

@@ -21,13 +21,13 @@ export default function SearchBar({ onSearch, placeholder = "Search notes by tit
     return (
         <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto">
             <div className="relative group">
-                <HiOutlineSearch className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-500 group-focus-within:text-primary-400 transition-colors" />
+                <HiOutlineSearch className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-600 dark:text-surface-400 dark:text-surface-500 group-focus-within:text-primary-400 transition-colors" />
                 <input
                     type="text"
                     value={query}
                     onChange={handleChange}
                     placeholder={placeholder}
-                    className="w-full pl-12 pr-28 py-3.5 bg-surface-800/60 border border-surface-700/50 rounded-2xl text-white placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all text-sm"
+                    className="w-full pl-12 pr-28 py-3.5 bg-surface-800/60 border border-surface-700/50 rounded-2xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all text-sm"
                 />
                 <button
                     type="submit"

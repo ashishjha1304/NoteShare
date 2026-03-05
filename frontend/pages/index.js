@@ -98,7 +98,7 @@ export default function Home() {
                         </h1>
 
                         {/* Subtitle */}
-                        <p className="text-lg sm:text-xl text-surface-400 leading-relaxed mb-10 animate-slide-up" style={{ animationDelay: "100ms" }}>
+                        <p className="text-lg sm:text-xl text-surface-600 dark:text-surface-400 leading-relaxed mb-10 animate-slide-up" style={{ animationDelay: "100ms" }}>
                             Upload, browse, and download quality study materials. Join thousands of students helping each other learn better.
                         </p>
 
@@ -120,12 +120,12 @@ export default function Home() {
             {/* Search Results */}
             {searchResults !== null && (
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-                    <h2 className="text-2xl font-display font-bold text-white mb-6">
+                    <h2 className="text-2xl font-display font-bold text-surface-900 dark:text-white mb-6">
                         Search Results ({searchResults.length})
                     </h2>
                     {searchResults.length === 0 ? (
                         <div className="text-center py-12 bg-surface-900/50 rounded-2xl border border-surface-800/50">
-                            <p className="text-surface-400">No notes found. Try a different search term.</p>
+                            <p className="text-surface-600 dark:text-surface-400">No notes found. Try a different search term.</p>
                         </div>
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -141,8 +141,8 @@ export default function Home() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="flex items-center justify-between mb-8">
                     <div>
-                        <h2 className="text-2xl sm:text-3xl font-display font-bold text-white">Browse by Subject</h2>
-                        <p className="text-surface-400 mt-1">Explore notes organized by topic</p>
+                        <h2 className="text-2xl sm:text-3xl font-display font-bold text-surface-900 dark:text-white">Browse by Subject</h2>
+                        <p className="text-surface-600 dark:text-surface-400 mt-1">Explore notes organized by topic</p>
                     </div>
                 </div>
 
@@ -164,10 +164,10 @@ export default function Home() {
                                             {meta.icon}
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-white font-semibold group-hover:text-primary-300 transition-colors">
+                                            <h3 className="text-surface-900 dark:text-white font-semibold group-hover:text-primary-300 transition-colors">
                                                 {subject.name}
                                             </h3>
-                                            <p className="text-surface-500 text-sm">{noteCount} notes</p>
+                                            <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-sm">{noteCount} notes</p>
                                         </div>
                                         <HiOutlineArrowRight className="w-5 h-5 text-surface-600 group-hover:text-primary-400 group-hover:translate-x-1 transition-all" />
                                     </div>
@@ -183,8 +183,8 @@ export default function Home() {
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <div className="flex items-center justify-between mb-8">
                         <div>
-                            <h2 className="text-2xl sm:text-3xl font-display font-bold text-white">Latest Notes</h2>
-                            <p className="text-surface-400 mt-1">Recently uploaded study materials</p>
+                            <h2 className="text-2xl sm:text-3xl font-display font-bold text-surface-900 dark:text-white">Latest Notes</h2>
+                            <p className="text-surface-600 dark:text-surface-400 mt-1">Recently uploaded study materials</p>
                         </div>
                         <Link
                             href="/notes"
@@ -206,11 +206,11 @@ export default function Home() {
             {!loading && topDownloadedNotes.length > 0 && (
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pb-24">
                     <div className="mb-8">
-                        <h2 className="text-2xl sm:text-3xl font-display font-bold text-white flex items-center gap-2">
+                        <h2 className="text-2xl sm:text-3xl font-display font-bold text-surface-900 dark:text-white flex items-center gap-2">
                             <HiOutlineLightningBolt className="text-amber-400" />
                             Most Popular
                         </h2>
-                        <p className="text-surface-400 mt-1">Top downloaded notes by students</p>
+                        <p className="text-surface-600 dark:text-surface-400 mt-1">Top downloaded notes by students</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -227,10 +227,10 @@ export default function Home() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-3xl" />
 
                 <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-                    <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
+                    <h2 className="text-3xl sm:text-4xl font-display font-bold text-surface-900 dark:text-white mb-4">
                         Ready to share your notes?
                     </h2>
-                    <p className="text-surface-400 text-lg mb-8 max-w-xl mx-auto">
+                    <p className="text-surface-600 dark:text-surface-400 text-lg mb-8 max-w-xl mx-auto">
                         Help fellow students by uploading your study materials. Together we learn better.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-4">
@@ -242,7 +242,7 @@ export default function Home() {
                         </Link>
                         <Link
                             href="/notes"
-                            className="px-8 py-3.5 bg-surface-800/60 hover:bg-surface-700/80 text-white font-medium rounded-xl border border-surface-700/50 hover:border-surface-600 transition-all"
+                            className="px-8 py-3.5 bg-surface-800/60 hover:bg-surface-700/80 text-surface-900 dark:text-white font-medium rounded-xl border border-surface-700/50 hover:border-surface-300 dark:hover:border-surface-600 transition-all"
                         >
                             Browse Notes
                         </Link>
@@ -255,7 +255,7 @@ export default function Home() {
                 <div className="fixed inset-0 bg-surface-950/80 flex items-center justify-center z-50">
                     <div className="flex flex-col items-center gap-4">
                         <div className="w-10 h-10 border-3 border-primary-500/30 border-t-primary-500 rounded-full animate-spin" />
-                        <p className="text-surface-400 text-sm">Loading notes...</p>
+                        <p className="text-surface-600 dark:text-surface-400 text-sm">Loading notes...</p>
                     </div>
                 </div>
             )}
@@ -265,9 +265,9 @@ export default function Home() {
 
 function StatBadge({ icon, value, label }) {
     return (
-        <div className="flex items-center gap-2 text-surface-400">
+        <div className="flex items-center gap-2 text-surface-600 dark:text-surface-400">
             <span className="text-primary-400">{icon}</span>
-            <span className="font-bold text-white">{value}</span>
+            <span className="font-bold text-surface-900 dark:text-white">{value}</span>
             <span className="text-sm">{label}</span>
         </div>
     );

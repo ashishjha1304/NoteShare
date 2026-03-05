@@ -49,7 +49,7 @@ export default function CommentSection({ noteId }) {
         <div className="space-y-6">
             <div className="flex items-center gap-2">
                 <HiOutlineChat className="w-5 h-5 text-primary-400" />
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-surface-900 dark:text-white">
                     Comments ({comments.length})
                 </h3>
             </div>
@@ -62,7 +62,7 @@ export default function CommentSection({ noteId }) {
                         value={newComment}
                         onChange={(e) => setNewComment(e.target.value)}
                         placeholder="Write a comment..."
-                        className="flex-1 px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-white placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 text-sm transition-all"
+                        className="flex-1 px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 text-sm transition-all"
                     />
                     <button
                         type="submit"
@@ -74,7 +74,7 @@ export default function CommentSection({ noteId }) {
                     </button>
                 </form>
             ) : (
-                <p className="text-surface-500 text-sm bg-surface-800/40 rounded-xl p-4 border border-surface-700/30">
+                <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-sm bg-surface-800/40 rounded-xl p-4 border border-surface-700/30">
                     Please <Link href="/login" className="text-primary-400 hover:text-primary-300 underline">log in</Link> to leave a comment.
                 </p>
             )}
@@ -86,7 +86,7 @@ export default function CommentSection({ noteId }) {
                         <div className="w-6 h-6 border-2 border-primary-500/30 border-t-primary-500 rounded-full animate-spin" />
                     </div>
                 ) : comments.length === 0 ? (
-                    <p className="text-surface-500 text-sm text-center py-8">
+                    <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-sm text-center py-8">
                         No comments yet. Be the first to comment!
                     </p>
                 ) : (
@@ -97,10 +97,10 @@ export default function CommentSection({ noteId }) {
                         >
                             <div className="flex items-center gap-2 mb-2">
                                 <HiOutlineUserCircle className="w-5 h-5 text-primary-400" />
-                                <span className="text-sm font-medium text-white">
+                                <span className="text-sm font-medium text-surface-900 dark:text-white">
                                     {comment.users?.name || "User"}
                                 </span>
-                                <span className="text-xs text-surface-500">
+                                <span className="text-xs text-surface-600 dark:text-surface-400 dark:text-surface-500">
                                     {new Date(comment.created_at).toLocaleDateString("en-US", {
                                         month: "short",
                                         day: "numeric",
@@ -110,7 +110,7 @@ export default function CommentSection({ noteId }) {
                                     })}
                                 </span>
                             </div>
-                            <p className="text-surface-300 text-sm leading-relaxed pl-7">
+                            <p className="text-surface-700 dark:text-surface-300 text-sm leading-relaxed pl-7">
                                 {comment.comment_text}
                             </p>
                         </div>

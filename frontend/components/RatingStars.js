@@ -41,7 +41,7 @@ export default function RatingStars({ currentRating = 0, onRate, interactive = t
                 );
             })}
             {currentRating > 0 && (
-                <span className="ml-2 text-sm font-semibold text-surface-400">
+                <span className="ml-2 text-sm font-semibold text-surface-600 dark:text-surface-400">
                     {parseFloat(currentRating).toFixed(1)}
                 </span>
             )}

@@ -62,11 +62,11 @@ export default function Notes() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
                 {/* Header */}
                 <div className="text-center mb-10">
-                    <h1 className="text-3xl sm:text-4xl font-display font-bold text-white flex items-center justify-center gap-3">
+                    <h1 className="text-3xl sm:text-4xl font-display font-bold text-surface-900 dark:text-white flex items-center justify-center gap-3">
                         <HiOutlineBookOpen className="text-primary-400" />
                         Browse Notes
                     </h1>
-                    <p className="text-surface-400 mt-2">Discover and download study materials</p>
+                    <p className="text-surface-600 dark:text-surface-400 mt-2">Discover and download study materials</p>
                 </div>
 
                 {/* Search */}
@@ -77,14 +77,14 @@ export default function Notes() {
                 {/* Filters */}
                 <div className="flex flex-wrap items-center gap-3 mb-6">
                     <div className="flex items-center gap-2 mr-2">
-                        <HiOutlineFilter className="text-surface-400 w-4 h-4" />
-                        <span className="text-surface-400 text-sm font-medium">Filter:</span>
+                        <HiOutlineFilter className="text-surface-600 dark:text-surface-400 w-4 h-4" />
+                        <span className="text-surface-600 dark:text-surface-400 text-sm font-medium">Filter:</span>
                     </div>
                     <button
                         onClick={() => handleSubjectFilter("")}
                         className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-all ${!activeSubject
                                 ? "bg-primary-500/20 text-primary-400 border border-primary-500/30"
-                                : "text-surface-400 bg-surface-800/40 border border-surface-700/30 hover:border-surface-600"
+                                : "text-surface-600 dark:text-surface-400 bg-surface-800/40 border border-surface-700/30 hover:border-surface-300 dark:hover:border-surface-600"
                             }`}
                     >
                         All
@@ -95,7 +95,7 @@ export default function Notes() {
                             onClick={() => handleSubjectFilter(s.name)}
                             className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-all ${activeSubject === s.name
                                     ? "bg-primary-500/20 text-primary-400 border border-primary-500/30"
-                                    : "text-surface-400 bg-surface-800/40 border border-surface-700/30 hover:border-surface-600"
+                                    : "text-surface-600 dark:text-surface-400 bg-surface-800/40 border border-surface-700/30 hover:border-surface-300 dark:hover:border-surface-600"
                                 }`}
                         >
                             {s.name}
@@ -106,14 +106,14 @@ export default function Notes() {
                 {/* Sort */}
                 <div className="flex items-center gap-3 mb-8">
                     <div className="flex items-center gap-2 mr-2">
-                        <HiOutlineSortDescending className="text-surface-400 w-4 h-4" />
-                        <span className="text-surface-400 text-sm font-medium">Sort:</span>
+                        <HiOutlineSortDescending className="text-surface-600 dark:text-surface-400 w-4 h-4" />
+                        <span className="text-surface-600 dark:text-surface-400 text-sm font-medium">Sort:</span>
                     </div>
                     <button
                         onClick={() => handleSort("downloads")}
                         className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-all ${activeSort === "downloads"
                                 ? "bg-amber-500/20 text-amber-400 border border-amber-500/30"
-                                : "text-surface-400 bg-surface-800/40 border border-surface-700/30 hover:border-surface-600"
+                                : "text-surface-600 dark:text-surface-400 bg-surface-800/40 border border-surface-700/30 hover:border-surface-300 dark:hover:border-surface-600"
                             }`}
                     >
                         Most Downloads
@@ -122,7 +122,7 @@ export default function Notes() {
                         onClick={() => handleSort("rating")}
                         className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-all ${activeSort === "rating"
                                 ? "bg-amber-500/20 text-amber-400 border border-amber-500/30"
-                                : "text-surface-400 bg-surface-800/40 border border-surface-700/30 hover:border-surface-600"
+                                : "text-surface-600 dark:text-surface-400 bg-surface-800/40 border border-surface-700/30 hover:border-surface-300 dark:hover:border-surface-600"
                             }`}
                     >
                         Highest Rated
@@ -134,14 +134,14 @@ export default function Notes() {
                     <div className="flex justify-center py-20">
                         <div className="flex flex-col items-center gap-4">
                             <div className="w-10 h-10 border-3 border-primary-500/30 border-t-primary-500 rounded-full animate-spin" />
-                            <p className="text-surface-400 text-sm">Loading notes...</p>
+                            <p className="text-surface-600 dark:text-surface-400 text-sm">Loading notes...</p>
                         </div>
                     </div>
                 ) : notes.length === 0 ? (
                     <div className="text-center py-20 bg-surface-900/30 rounded-2xl border border-surface-800/50">
                         <HiOutlineBookOpen className="w-12 h-12 text-surface-600 mx-auto mb-4" />
-                        <h3 className="text-lg font-semibold text-surface-400">No notes found</h3>
-                        <p className="text-surface-500 text-sm mt-1">Try adjusting your filters or search terms</p>
+                        <h3 className="text-lg font-semibold text-surface-600 dark:text-surface-400">No notes found</h3>
+                        <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-sm mt-1">Try adjusting your filters or search terms</p>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

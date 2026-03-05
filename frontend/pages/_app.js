@@ -3,15 +3,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 import Head from "next/head";
+import { ThemeProvider } from "next-themes";
 
 export default function App({ Component, pageProps }) {
     return (
-        <>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Head>
                 <title>NoteShare — Share & Discover Study Notes</title>
                 <meta name="description" content="NoteShare is a collaborative platform for students to share, discover, and download study notes. Browse subjects, upload PDFs, rate and comment." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.png" />
             </Head>
             <div className="flex flex-col min-h-screen">
                 <Navbar />
@@ -43,6 +44,6 @@ export default function App({ Component, pageProps }) {
                     },
                 }}
             />
-        </>
+        </ThemeProvider>
     );
 }

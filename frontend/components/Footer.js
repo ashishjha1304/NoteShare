@@ -15,16 +15,16 @@ export default function Footer() {
                             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary-500/20">
                                 N
                             </div>
-                            <span className="font-display text-lg font-bold text-white">NoteShare</span>
+                            <span className="font-display text-lg font-bold text-surface-900 dark:text-white">NoteShare</span>
                         </div>
-                        <p className="text-surface-400 text-sm leading-relaxed max-w-sm">
+                        <p className="text-surface-600 dark:text-surface-400 text-sm leading-relaxed max-w-sm">
                             A collaborative platform for students to share, discover, and download study notes. Learn together, grow together.
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Quick Links</h4>
+                        <h4 className="text-sm font-semibold text-surface-900 dark:text-white uppercase tracking-wider mb-4">Quick Links</h4>
                         <ul className="space-y-2.5">
                             <FooterLink href="/">Home</FooterLink>
                             <FooterLink href="/notes">Browse Notes</FooterLink>
@@ -35,7 +35,7 @@ export default function Footer() {
 
                     {/* Subjects */}
                     <div>
-                        <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Popular Subjects</h4>
+                        <h4 className="text-sm font-semibold text-surface-900 dark:text-white uppercase tracking-wider mb-4">Popular Subjects</h4>
                         <ul className="space-y-2.5">
                             <FooterLink href="/notes/Computer Science">Computer Science</FooterLink>
                             <FooterLink href="/notes/Python Programming">Python Programming</FooterLink>
@@ -47,10 +47,10 @@ export default function Footer() {
 
                 {/* Bottom */}
                 <div className="mt-10 pt-6 border-t border-surface-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p className="text-surface-500 text-sm">
+                    <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-sm">
                         © {new Date().getFullYear()} NoteShare. All rights reserved.
                     </p>
-                    <p className="text-surface-500 text-sm flex items-center gap-1">
+                    <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-sm flex items-center gap-1">
                         Built with <HiOutlineHeart className="text-red-400 w-4 h-4" /> for students
                     </p>
                 </div>
@@ -62,7 +62,7 @@ export default function Footer() {
 function FooterLink({ href, children }) {
     return (
         <li>
-            <Link href={href} className="text-surface-400 hover:text-primary-400 text-sm transition-colors">
+            <Link href={href} className="text-surface-600 dark:text-surface-400 hover:text-primary-400 text-sm transition-colors">
                 {children}
             </Link>
         </li>

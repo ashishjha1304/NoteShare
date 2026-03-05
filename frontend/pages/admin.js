@@ -81,11 +81,11 @@ export default function Admin() {
                 <div className="mb-8">
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg shadow-primary-500/25">
-                            <HiOutlineShieldCheck className="w-5 h-5 text-white" />
+                            <HiOutlineShieldCheck className="w-5 h-5 text-surface-900 dark:text-white" />
                         </div>
-                        <h1 className="text-3xl font-display font-bold text-white">Admin Panel</h1>
+                        <h1 className="text-3xl font-display font-bold text-surface-900 dark:text-white">Admin Panel</h1>
                     </div>
-                    <p className="text-surface-400">Manage notes, users, and view platform statistics</p>
+                    <p className="text-surface-600 dark:text-surface-400">Manage notes, users, and view platform statistics</p>
                 </div>
 
                 {/* Tabs */}
@@ -96,7 +96,7 @@ export default function Admin() {
                             onClick={() => setActiveTab(tab)}
                             className={`px-5 py-2.5 text-sm font-medium rounded-lg capitalize transition-all ${activeTab === tab
                                     ? "bg-primary-500/20 text-primary-400 shadow-sm"
-                                    : "text-surface-400 hover:text-white"
+                                    : "text-surface-600 dark:text-surface-400 hover:text-white"
                                 }`}
                         >
                             {tab}
@@ -137,15 +137,15 @@ export default function Admin() {
 
                         {/* Quick info */}
                         <div className="glass rounded-2xl p-6">
-                            <h3 className="text-lg font-semibold text-white mb-3">Platform Overview</h3>
+                            <h3 className="text-lg font-semibold text-surface-900 dark:text-white mb-3">Platform Overview</h3>
                             <div className="grid grid-cols-2 gap-4 text-sm">
                                 <div className="flex justify-between py-2 border-b border-surface-800/50">
-                                    <span className="text-surface-400">Subjects Available</span>
-                                    <span className="text-white font-medium">{stats.totalSubjects}</span>
+                                    <span className="text-surface-600 dark:text-surface-400">Subjects Available</span>
+                                    <span className="text-surface-900 dark:text-white font-medium">{stats.totalSubjects}</span>
                                 </div>
                                 <div className="flex justify-between py-2 border-b border-surface-800/50">
-                                    <span className="text-surface-400">Avg Downloads/Note</span>
-                                    <span className="text-white font-medium">
+                                    <span className="text-surface-600 dark:text-surface-400">Avg Downloads/Note</span>
+                                    <span className="text-surface-900 dark:text-white font-medium">
                                         {stats.totalNotes > 0 ? Math.round(stats.totalDownloads / stats.totalNotes) : 0}
                                     </span>
                                 </div>
@@ -162,27 +162,27 @@ export default function Admin() {
                                 <table className="w-full text-sm">
                                     <thead>
                                         <tr className="border-b border-surface-800/50">
-                                            <th className="text-left py-4 px-6 text-surface-400 font-medium">Title</th>
-                                            <th className="text-left py-4 px-4 text-surface-400 font-medium">Subject</th>
-                                            <th className="text-left py-4 px-4 text-surface-400 font-medium">Uploader</th>
-                                            <th className="text-center py-4 px-4 text-surface-400 font-medium">Downloads</th>
-                                            <th className="text-center py-4 px-4 text-surface-400 font-medium">Rating</th>
-                                            <th className="text-center py-4 px-4 text-surface-400 font-medium">Actions</th>
+                                            <th className="text-left py-4 px-6 text-surface-600 dark:text-surface-400 font-medium">Title</th>
+                                            <th className="text-left py-4 px-4 text-surface-600 dark:text-surface-400 font-medium">Subject</th>
+                                            <th className="text-left py-4 px-4 text-surface-600 dark:text-surface-400 font-medium">Uploader</th>
+                                            <th className="text-center py-4 px-4 text-surface-600 dark:text-surface-400 font-medium">Downloads</th>
+                                            <th className="text-center py-4 px-4 text-surface-600 dark:text-surface-400 font-medium">Rating</th>
+                                            <th className="text-center py-4 px-4 text-surface-600 dark:text-surface-400 font-medium">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {notes.map((note) => (
                                             <tr key={note.id} className="border-b border-surface-800/30 hover:bg-surface-800/20 transition-colors">
-                                                <td className="py-3 px-6 text-white font-medium max-w-[200px] truncate">
+                                                <td className="py-3 px-6 text-surface-900 dark:text-white font-medium max-w-[200px] truncate">
                                                     {note.title}
                                                 </td>
-                                                <td className="py-3 px-4 text-surface-400">{note.subjects?.name}</td>
-                                                <td className="py-3 px-4 text-surface-400">{note.users?.name}</td>
-                                                <td className="py-3 px-4 text-center text-surface-300">{note.downloads}</td>
+                                                <td className="py-3 px-4 text-surface-600 dark:text-surface-400">{note.subjects?.name}</td>
+                                                <td className="py-3 px-4 text-surface-600 dark:text-surface-400">{note.users?.name}</td>
+                                                <td className="py-3 px-4 text-center text-surface-700 dark:text-surface-300">{note.downloads}</td>
                                                 <td className="py-3 px-4 text-center">
                                                     <span className="flex items-center justify-center gap-1">
                                                         <HiOutlineStar className="w-3.5 h-3.5 text-amber-400" />
-                                                        <span className="text-surface-300">{note.rating ? parseFloat(note.rating).toFixed(1) : '-'}</span>
+                                                        <span className="text-surface-700 dark:text-surface-300">{note.rating ? parseFloat(note.rating).toFixed(1) : '-'}</span>
                                                     </span>
                                                 </td>
                                                 <td className="py-3 px-4 text-center">
@@ -211,17 +211,17 @@ export default function Admin() {
                                 <table className="w-full text-sm">
                                     <thead>
                                         <tr className="border-b border-surface-800/50">
-                                            <th className="text-left py-4 px-6 text-surface-400 font-medium">Name</th>
-                                            <th className="text-left py-4 px-4 text-surface-400 font-medium">Email</th>
-                                            <th className="text-left py-4 px-4 text-surface-400 font-medium">Role</th>
-                                            <th className="text-left py-4 px-4 text-surface-400 font-medium">Joined</th>
+                                            <th className="text-left py-4 px-6 text-surface-600 dark:text-surface-400 font-medium">Name</th>
+                                            <th className="text-left py-4 px-4 text-surface-600 dark:text-surface-400 font-medium">Email</th>
+                                            <th className="text-left py-4 px-4 text-surface-600 dark:text-surface-400 font-medium">Role</th>
+                                            <th className="text-left py-4 px-4 text-surface-600 dark:text-surface-400 font-medium">Joined</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {users.map((user) => (
                                             <tr key={user.id} className="border-b border-surface-800/30 hover:bg-surface-800/20 transition-colors">
-                                                <td className="py-3 px-6 text-white font-medium">{user.name}</td>
-                                                <td className="py-3 px-4 text-surface-400">{user.email}</td>
+                                                <td className="py-3 px-6 text-surface-900 dark:text-white font-medium">{user.name}</td>
+                                                <td className="py-3 px-4 text-surface-600 dark:text-surface-400">{user.email}</td>
                                                 <td className="py-3 px-4">
                                                     <span className={`px-2.5 py-1 text-xs font-semibold rounded-lg ${user.role === "admin"
                                                             ? "bg-amber-500/15 text-amber-400"
@@ -230,7 +230,7 @@ export default function Admin() {
                                                         {user.role}
                                                     </span>
                                                 </td>
-                                                <td className="py-3 px-4 text-surface-400">
+                                                <td className="py-3 px-4 text-surface-600 dark:text-surface-400">
                                                     {new Date(user.created_at).toLocaleDateString()}
                                                 </td>
                                             </tr>
@@ -252,8 +252,8 @@ function StatsCard({ icon, label, value, color }) {
             <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center text-white mb-4 shadow-lg`}>
                 {icon}
             </div>
-            <p className="text-surface-400 text-sm mb-1">{label}</p>
-            <p className="text-3xl font-display font-bold text-white">{value}</p>
+            <p className="text-surface-600 dark:text-surface-400 text-sm mb-1">{label}</p>
+            <p className="text-3xl font-display font-bold text-surface-900 dark:text-white">{value}</p>
         </div>
     );
 }
