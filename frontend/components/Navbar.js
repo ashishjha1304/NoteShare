@@ -71,7 +71,7 @@ export default function Navbar() {
                         )}
                     </div>
 
-                    {/* Auth buttons & Theme */}
+                    {/* Desktop Auth buttons & Theme */}
                     <div className="hidden md:flex items-center gap-3">
                         {mounted && (
                             <button
@@ -113,7 +113,7 @@ export default function Navbar() {
                         )}
                     </div>
 
-                    {/* Mobile menu and Theme toggle */}
+                    {/* Mobile minimal actions */}
                     <div className="md:hidden flex items-center gap-2">
                         {mounted && (
                             <button
@@ -124,47 +124,20 @@ export default function Navbar() {
                                 {theme === "dark" ? <HiOutlineSun className="w-5 h-5" /> : <HiOutlineMoon className="w-5 h-5" />}
                             </button>
                         )}
-                        <button
-                            onClick={() => setMenuOpen(!menuOpen)}
-                            className="text-surface-700 dark:text-surface-300 hover:text-surface-900 dark:text-white p-2.5 rounded-xl bg-surface-200/50 dark:bg-surface-800/40 border border-surface-300 dark:border-surface-700/50 transition-colors active:scale-95"
-                            aria-label="Toggle Menu"
-                        >
-                            {menuOpen ? <HiOutlineX className="w-6 h-6" /> : <HiOutlineMenu className="w-6 h-6" />}
-                        </button>
+                        {loggedIn && (
+                            <button
+                                onClick={handleLogout}
+                                className="p-2.5 rounded-xl text-surface-600 dark:text-surface-400 bg-surface-200/50 dark:bg-surface-800/40 border border-surface-300 dark:border-surface-700/50 transition-colors active:scale-95"
+                                aria-label="Logout"
+                            >
+                                <HiOutlineLogout className="w-5 h-5" />
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>
 
-            {/* Mobile menu */}
-            {menuOpen && (
-                <div className="md:hidden bg-surface-50/95 dark:bg-surface-950/95 backdrop-blur-xl border-t border-surface-200 dark:border-surface-800/50 animate-slide-down">
-                    <div className="px-4 py-4 space-y-2">
-                        <MobileNavLink href="/" onClick={() => setMenuOpen(false)}>Home</MobileNavLink>
-                        <MobileNavLink href="/notes" onClick={() => setMenuOpen(false)}>Browse Notes</MobileNavLink>
-                        {loggedIn && <MobileNavLink href="/upload" onClick={() => setMenuOpen(false)}>Upload Notes</MobileNavLink>}
-                        {admin && <MobileNavLink href="/admin" onClick={() => setMenuOpen(false)}>Admin Panel</MobileNavLink>}
-                        <div className="pt-2 border-t border-surface-200 dark:border-surface-800">
-                            {loggedIn ? (
-                                <button
-                                    onClick={() => { handleLogout(); setMenuOpen(false); }}
-                                    className="w-full text-left px-4 py-2.5 text-surface-700 dark:text-surface-300 hover:text-surface-900 dark:text-white hover:bg-surface-800/60 rounded-xl transition-colors"
-                                >
-                                    Logout
-                                </button>
-                            ) : (
-                                <div className="flex gap-2">
-                                    <Link href="/login" onClick={() => setMenuOpen(false)} className="flex-1 text-center px-4 py-2.5 text-surface-700 dark:text-surface-300 hover:text-surface-900 dark:text-white bg-surface-800/40 rounded-xl transition-colors">
-                                        Log in
-                                    </Link>
-                                    <Link href="/signup" onClick={() => setMenuOpen(false)} className="flex-1 text-center px-4 py-2.5 text-white bg-gradient-to-r from-primary-600 to-primary-500 rounded-xl font-semibold">
-                                        Sign up
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            )}
+
         </nav>
     );
 }
