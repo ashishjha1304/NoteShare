@@ -39,7 +39,7 @@ export default function Navbar() {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                ? "bg-surface-950/90 backdrop-blur-xl shadow-lg shadow-primary-500/5 border-b border-surface-800/50"
+                ? "bg-surface-50/90 dark:bg-surface-950/90 backdrop-blur-xl shadow-lg shadow-primary-500/5 border-b border-surface-200 dark:border-surface-800/50"
                 : "bg-transparent"
                 }`}
         >
@@ -50,7 +50,7 @@ export default function Navbar() {
                         <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary-500/25 group-hover:shadow-primary-500/40 transition-shadow">
                             N
                         </div>
-                        <span className="font-display text-xl font-bold bg-gradient-to-r from-white to-surface-300 bg-clip-text text-transparent">
+                        <span className="font-display text-xl font-bold bg-gradient-to-r from-surface-800 to-surface-500 dark:from-white dark:to-surface-300 bg-clip-text text-transparent">
                             NoteShare
                         </span>
                     </Link>
@@ -135,7 +135,7 @@ export default function Navbar() {
 
             {/* Mobile menu */}
             {menuOpen && (
-                <div className="md:hidden bg-surface-950/95 backdrop-blur-xl border-t border-surface-800/50 animate-slide-down">
+                <div className="md:hidden bg-surface-50/95 dark:bg-surface-950/95 backdrop-blur-xl border-t border-surface-200 dark:border-surface-800/50 animate-slide-down">
                     <div className="px-4 py-4 space-y-2">
                         <MobileNavLink href="/" onClick={() => setMenuOpen(false)}>Home</MobileNavLink>
                         <MobileNavLink href="/notes" onClick={() => setMenuOpen(false)}>Browse Notes</MobileNavLink>
@@ -172,8 +172,8 @@ function NavLink({ href, active, children }) {
         <Link
             href={href}
             className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${active
-                ? "text-primary-400 bg-primary-500/10"
-                : "text-surface-600 dark:text-surface-400 hover:text-white hover:bg-surface-800/50"
+                ? "text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-primary-500/10"
+                : "text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-white hover:bg-surface-200/50 dark:hover:bg-surface-800/50"
                 }`}
         >
             {children}

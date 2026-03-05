@@ -27,7 +27,7 @@ export default function SearchBar({ onSearch, placeholder = "Search notes by tit
                     value={query}
                     onChange={handleChange}
                     placeholder={placeholder}
-                    className="w-full pl-12 pr-28 py-3.5 bg-surface-800/60 border border-surface-700/50 rounded-2xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all text-sm"
+                    className="w-full pl-12 pr-28 py-3.5 bg-surface-100/60 dark:bg-surface-800/60 border border-surface-300/50 dark:border-surface-700/50 rounded-2xl text-surface-900 dark:text-white placeholder-surface-500 dark:placeholder-surface-400 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all text-sm"
                 />
                 <button
                     type="submit"

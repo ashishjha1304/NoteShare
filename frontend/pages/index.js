@@ -77,10 +77,10 @@ export default function Home() {
             {/* Hero Section */}
             <section className="relative overflow-hidden">
                 {/* Background effects */}
-                <div className="absolute inset-0 bg-gradient-to-b from-primary-950/50 via-surface-950 to-surface-950" />
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-float" />
-                <div className="absolute top-20 right-1/4 w-72 h-72 bg-accent-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-48 bg-gradient-to-t from-surface-950 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-b from-primary-100/50 dark:from-primary-950/50 via-surface-50 dark:via-surface-950 to-surface-50 dark:to-surface-950" />
+                <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-3xl animate-float" />
+                <div className="absolute top-20 right-1/4 w-72 h-72 bg-accent-500/20 dark:bg-accent-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-48 bg-gradient-to-t from-surface-50 dark:from-surface-950 to-transparent" />
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 sm:pt-28 sm:pb-32">
                     <div className="text-center max-w-3xl mx-auto">
@@ -223,8 +223,8 @@ export default function Home() {
 
             {/* CTA Section */}
             <section className="relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-950/50 to-accent-950/50" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-3xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-100/50 dark:from-primary-950/50 to-accent-100/50 dark:to-accent-950/50" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-3xl" />
 
                 <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
                     <h2 className="text-3xl sm:text-4xl font-display font-bold text-surface-900 dark:text-white mb-4">
@@ -252,7 +252,7 @@ export default function Home() {
 
             {/* Loading overlay */}
             {loading && (
-                <div className="fixed inset-0 bg-surface-950/80 flex items-center justify-center z-50">
+                <div className="fixed inset-0 bg-surface-50/80 dark:bg-surface-950/80 flex items-center justify-center z-50">
                     <div className="flex flex-col items-center gap-4">
                         <div className="w-10 h-10 border-3 border-primary-500/30 border-t-primary-500 rounded-full animate-spin" />
                         <p className="text-surface-600 dark:text-surface-400 text-sm">Loading notes...</p>
