@@ -82,11 +82,25 @@
   }
 
   @keyframes pulse-subtle {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.9; }
+
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
   }
 
   .animate-pulse-subtle {
     animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .touch-bounce:active {
+    transform: scale(0.92);
+    transition: transform 0.1s;
   }
 }

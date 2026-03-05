@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { isLoggedIn, isAdmin, logout, getUser } from "../services/auth";
-import { HiOutlineMenu, HiOutlineX, HiOutlineUpload, HiOutlineLogin, HiOutlineLogout, HiOutlineCog, HiOutlineSun, HiOutlineMoon } from "react-icons/hi";
+import { HiOutlineUpload, HiOutlineLogout, HiOutlineCog, HiOutlineSun, HiOutlineMoon } from "react-icons/hi";
 import { useTheme } from "next-themes";
 
 export default function Navbar() {
@@ -10,7 +10,6 @@ export default function Navbar() {
     const [loggedIn, setLoggedIn] = useState(false);
     const [admin, setAdmin] = useState(false);
     const [user, setUser] = useState(null);
-    const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
@@ -156,14 +155,4 @@ function NavLink({ href, active, children }) {
     );
 }
 
-function MobileNavLink({ href, onClick, children }) {
-    return (
-        <Link
-            href={href}
-            onClick={onClick}
-            className="block px-4 py-2.5 text-surface-700 dark:text-surface-300 hover:text-surface-900 dark:text-white hover:bg-surface-800/60 rounded-xl transition-colors"
-        >
-            {children}
-        </Link>
-    );
-}
+
