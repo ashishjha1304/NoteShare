@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { getSubjects, uploadNote } from "../services/notesService";
+import { useState } from "react";
+import { uploadNote } from "../services/notesService";
 import { HiOutlineCloudUpload, HiOutlineDocumentText, HiOutlineX } from "react-icons/hi";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
@@ -8,24 +8,10 @@ export default function UploadForm() {
     const router = useRouter();
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [subjectId, setSubjectId] = useState("");
+    const [subject, setSubject] = useState("");
     const [file, setFile] = useState(null);
-    const [subjects, setSubjects] = useState([]);
     const [uploading, setUploading] = useState(false);
     const [dragActive, setDragActive] = useState(false);
-
-    useEffect(() => {
-        fetchSubjects();
-    }, []);
-
-    const fetchSubjects = async () => {
-        try {
-            const data = await getSubjects();
-            setSubjects(data.subjects || []);
-        } catch (err) {
-            console.error("Failed to load subjects:", err);
-        }
-    };
 
     const handleDrag = (e) => {
         e.preventDefault();
@@ -59,8 +45,18 @@ export default function UploadForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!title || !subjectId || !file) {
+        if (!title || !subject || !file) {
             toast.error("Please fill all required fields and select a file");
+            return;
+        }
+
+        if (file.size > 200 * 1024 * 1024) {
+            toast.error("File size exceeds 200MB limit");
+            return;
+        }
+
+        if (file.size < 2 * 1024) {
+            toast.error("File size must be at least 2KB");
             return;
         }
 
@@ -69,7 +65,7 @@ export default function UploadForm() {
             const formData = new FormData();
             formData.append("title", title);
             formData.append("description", description);
-            formData.append("subject_id", subjectId);
+            formData.append("subject", subject);
             formData.append("file", file);
 
             await uploadNote(formData);
@@ -95,7 +91,7 @@ export default function UploadForm() {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="e.g. Introduction to Algorithms"
-                    className="w-full px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
+                    className="w-full px-4 py-3 bg-white dark:bg-surface-800/60 border border-surface-200 dark:border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                     required
                 />
             </div>
@@ -110,7 +106,7 @@ export default function UploadForm() {
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Brief description of the notes..."
                     rows={3}
-                    className="w-full px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all resize-none"
+                    className="w-full px-4 py-3 bg-white dark:bg-surface-800/60 border border-surface-200 dark:border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all resize-none"
                 />
             </div>
 
@@ -119,17 +115,14 @@ export default function UploadForm() {
                 <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
                     Subject <span className="text-red-400">*</span>
                 </label>
-                <select
-                    value={subjectId}
-                    onChange={(e) => setSubjectId(e.target.value)}
-                    className="w-full px-4 py-3 bg-surface-800/60 border border-surface-700/50 rounded-xl text-surface-900 dark:text-white focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all appearance-none"
+                <input
+                    type="text"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    placeholder="e.g. Mathematics"
+                    className="w-full px-4 py-3 bg-white dark:bg-surface-800/60 border border-surface-200 dark:border-surface-700/50 rounded-xl text-surface-900 dark:text-white placeholder-surface-400 dark:placeholder-surface-500 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                     required
-                >
-                    <option value="" className="bg-white dark:bg-surface-900">Select a subject</option>
-                    {subjects.map((s) => (
-                        <option key={s.id} value={s.id} className="bg-white dark:bg-surface-900">{s.name}</option>
-                    ))}
-                </select>
+                />
             </div>
 
             {/* File Upload */}
@@ -143,10 +136,10 @@ export default function UploadForm() {
                     onDragOver={handleDrag}
                     onDrop={handleDrop}
                     className={`relative border-2 border-dashed rounded-2xl p-8 text-center transition-all cursor-pointer ${dragActive
-                            ? "border-primary-500 bg-primary-500/10"
-                            : file
-                                ? "border-emerald-500/50 bg-emerald-500/5"
-                                : "border-surface-700/50 hover:border-surface-300 dark:hover:border-surface-600 bg-surface-800/30"
+                        ? "border-primary-500 bg-primary-50 dark:bg-primary-500/10"
+                        : file
+                            ? "border-emerald-500/50 bg-emerald-50 dark:bg-emerald-500/5"
+                            : "border-surface-300 dark:border-surface-700/50 hover:border-surface-400 dark:hover:border-surface-600 bg-surface-50 dark:bg-surface-800/30"
                         }`}
                 >
                     <input
@@ -176,7 +169,7 @@ export default function UploadForm() {
                             <p className="text-surface-600 dark:text-surface-400 text-sm">
                                 <span className="text-primary-400 font-medium">Click to upload</span> or drag and drop
                             </p>
-                            <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-xs mt-1">PDF files only (max 10MB)</p>
+                            <p className="text-surface-600 dark:text-surface-400 dark:text-surface-500 text-xs mt-1">PDF files only (min 2KB, max 200MB)</p>
                         </div>
                     )}
                 </div>

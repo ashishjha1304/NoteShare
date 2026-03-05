@@ -118,12 +118,39 @@ const getNoteDetails = async (req, res) => {
 // Upload a note
 const uploadNote = async (req, res) => {
     try {
-        const { title, description, subject_id } = req.body;
+        const { title, description, subject } = req.body;
         const file = req.file;
         const userId = req.user.id;
 
-        if (!title || !subject_id || !file) {
+        if (!title || !subject || !file) {
             return res.status(400).json({ error: "Title, subject and file are required" });
+        }
+
+        if (file.size < 2 * 1024) {
+            return res.status(400).json({ error: "File size must be at least 2KB" });
+        }
+
+        // Find or create subject
+        let subject_id;
+        const { data: existingSubject } = await supabaseAdmin
+            .from("subjects")
+            .select("id")
+            .ilike("name", subject)
+            .single();
+
+        if (existingSubject) {
+            subject_id = existingSubject.id;
+        } else {
+            const { data: newSubject, error: subjectError } = await supabaseAdmin
+                .from("subjects")
+                .insert({ name: subject })
+                .select()
+                .single();
+
+            if (subjectError) {
+                return res.status(500).json({ error: "Failed to create subject" });
+            }
+            subject_id = newSubject.id;
         }
 
         // Upload file to Supabase Storage

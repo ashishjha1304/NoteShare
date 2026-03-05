@@ -15,7 +15,7 @@ const {
 // Multer setup (memory storage for Supabase upload)
 const upload = multer({
     storage: multer.memoryStorage(),
-    limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
+    limits: { fileSize: 200 * 1024 * 1024 }, // 200MB limit
     fileFilter: (req, file, cb) => {
         if (file.mimetype === "application/pdf") {
             cb(null, true);
