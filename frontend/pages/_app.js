@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BottomNav from "@/components/BottomNav";
 import { Toaster } from "react-hot-toast";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
@@ -11,15 +12,16 @@ export default function App({ Component, pageProps }) {
             <Head>
                 <title>NoteShare — Share & Discover Study Notes</title>
                 <meta name="description" content="NoteShare is a collaborative platform for students to share, discover, and download study notes. Browse subjects, upload PDFs, rate and comment." />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
                 <link rel="icon" href="/favicon.png" />
             </Head>
             <div className="flex flex-col min-h-screen">
                 <Navbar />
-                <main className="flex-1 pt-16">
+                <main className="flex-1 pt-16 pb-16 md:pb-0">
                     <Component {...pageProps} />
                 </main>
                 <Footer />
+                <BottomNav />
             </div>
             <Toaster
                 position="top-right"

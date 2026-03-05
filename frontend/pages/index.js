@@ -82,35 +82,35 @@ export default function Home() {
                 <div className="absolute top-20 right-1/4 w-72 h-72 bg-accent-500/20 dark:bg-accent-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-48 bg-gradient-to-t from-surface-50 dark:from-surface-950 to-transparent" />
 
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 sm:pt-28 sm:pb-32">
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 sm:pt-28 sm:pb-32">
                     <div className="text-center max-w-3xl mx-auto">
                         {/* Badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-medium mb-6 animate-fade-in">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-[10px] sm:text-xs font-semibold mb-6 animate-fade-in uppercase tracking-wider">
                             <HiOutlineSparkles className="w-4 h-4" />
                             Free study notes for everyone
                         </div>
 
                         {/* Heading */}
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-slide-up">
+                        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-display font-black leading-[1.1] mb-6 animate-slide-up tracking-tight">
                             Share & Discover{" "}
                             <span className="text-gradient">Study Notes</span>{" "}
                             with Students
                         </h1>
 
                         {/* Subtitle */}
-                        <p className="text-lg sm:text-xl text-surface-600 dark:text-surface-400 leading-relaxed mb-10 animate-slide-up" style={{ animationDelay: "100ms" }}>
+                        <p className="text-base sm:text-xl text-surface-600 dark:text-surface-400 leading-relaxed mb-10 animate-slide-up px-4 sm:px-0" style={{ animationDelay: "100ms" }}>
                             Upload, browse, and download quality study materials. Join thousands of students helping each other learn better.
                         </p>
 
                         {/* Search */}
-                        <div className="animate-slide-up" style={{ animationDelay: "200ms" }}>
+                        <div className="animate-slide-up px-2 sm:px-0" style={{ animationDelay: "200ms" }}>
                             <SearchBar onSearch={handleSearch} />
                         </div>
 
                         {/* Stats */}
-                        <div className="flex flex-wrap items-center justify-center gap-8 mt-12 animate-fade-in" style={{ animationDelay: "400ms" }}>
-                            <StatBadge icon={<HiOutlineBookOpen />} value={notes.length} label="Notes shared" />
-                            <StatBadge icon={<HiOutlineUserGroup />} value="100+" label="Active students" />
+                        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 mt-12 animate-fade-in" style={{ animationDelay: "400ms" }}>
+                            <StatBadge icon={<HiOutlineBookOpen />} value={notes.length} label="Notes" />
+                            <StatBadge icon={<HiOutlineUserGroup />} value="100+" label="Students" />
                             <StatBadge icon={<HiOutlineAcademicCap />} value={subjects.length} label="Subjects" />
                         </div>
                     </div>
@@ -138,15 +138,15 @@ export default function Home() {
             )}
 
             {/* Browse Subjects */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="flex items-center justify-between mb-8">
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+                <div className="flex items-center justify-between mb-8 px-2 sm:px-0">
                     <div>
-                        <h2 className="text-2xl sm:text-3xl font-display font-bold text-surface-900 dark:text-white">Browse by Subject</h2>
-                        <p className="text-surface-600 dark:text-surface-400 mt-1">Explore notes organized by topic</p>
+                        <h2 className="text-2xl sm:text-4xl font-display font-bold text-surface-900 dark:text-white">Browse by Subject</h2>
+                        <p className="text-surface-600 dark:text-surface-400 mt-1 text-sm sm:text-base">Explore notes organized by topic</p>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-2 sm:px-0">
                     {subjects.map((subject, i) => {
                         const meta = subjectMeta[subject.name] || { icon: "📚", gradient: "from-surface-600 to-surface-500" };
                         const noteCount = notes.filter((n) => n.subject_id === subject.id).length;
@@ -226,23 +226,23 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-100/50 dark:from-primary-950/50 to-accent-100/50 dark:to-accent-950/50" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-3xl" />
 
-                <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-                    <h2 className="text-3xl sm:text-4xl font-display font-bold text-surface-900 dark:text-white mb-4">
+                <div className="relative max-w-4xl mx-auto px-6 sm:px-6 lg:px-8 py-20 text-center">
+                    <h2 className="text-3xl sm:text-5xl font-display font-bold text-surface-900 dark:text-white mb-6 leading-tight">
                         Ready to share your notes?
                     </h2>
-                    <p className="text-surface-600 dark:text-surface-400 text-lg mb-8 max-w-xl mx-auto">
+                    <p className="text-surface-600 dark:text-surface-400 text-base sm:text-lg mb-10 max-w-xl mx-auto">
                         Help fellow students by uploading your study materials. Together we learn better.
                     </p>
-                    <div className="flex flex-wrap items-center justify-center gap-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link
                             href="/signup"
-                            className="px-8 py-3.5 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white font-semibold rounded-xl shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all"
+                            className="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white font-bold rounded-2xl shadow-xl shadow-primary-500/25 hover:shadow-primary-500/40 transition-all active:scale-95"
                         >
                             Get Started Free
                         </Link>
                         <Link
                             href="/notes"
-                            className="px-8 py-3.5 bg-surface-200/60 dark:bg-surface-800/60 hover:bg-surface-300/60 dark:hover:bg-surface-700/80 text-surface-900 dark:text-white font-medium rounded-xl border border-surface-300/50 dark:border-surface-700/50 hover:border-surface-400/50 dark:hover:border-surface-600 transition-all"
+                            className="w-full sm:w-auto px-10 py-4 bg-surface-200/60 dark:bg-surface-800/60 hover:bg-surface-300/60 dark:hover:bg-surface-700/80 text-surface-900 dark:text-white font-semibold rounded-2xl border border-surface-300/50 dark:border-surface-700/50 hover:border-surface-400/50 dark:hover:border-surface-600 transition-all active:scale-95"
                         >
                             Browse Notes
                         </Link>
@@ -265,10 +265,12 @@ export default function Home() {
 
 function StatBadge({ icon, value, label }) {
     return (
-        <div className="flex items-center gap-2 text-surface-600 dark:text-surface-400">
-            <span className="text-primary-400">{icon}</span>
-            <span className="font-bold text-surface-900 dark:text-white">{value}</span>
-            <span className="text-sm">{label}</span>
+        <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-surface-600 dark:text-surface-400">
+            <span className="text-xl sm:text-lg text-primary-400">{icon}</span>
+            <div className="flex flex-col sm:flex-row items-center sm:gap-1.5">
+                <span className="font-bold text-surface-900 dark:text-white text-base sm:text-base">{value}</span>
+                <span className="text-[10px] sm:text-sm uppercase tracking-wide opacity-70">{label}</span>
+            </div>
         </div>
     );
 }

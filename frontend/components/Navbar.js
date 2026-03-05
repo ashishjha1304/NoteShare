@@ -118,14 +118,16 @@ export default function Navbar() {
                         {mounted && (
                             <button
                                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                                className="p-2 rounded-xl text-surface-600 dark:text-surface-400 bg-surface-200/50 dark:bg-surface-800/40 border border-surface-300 dark:border-surface-700/50"
+                                className="p-2.5 rounded-xl text-surface-600 dark:text-surface-400 bg-surface-200/50 dark:bg-surface-800/40 border border-surface-300 dark:border-surface-700/50 transition-colors active:scale-95"
+                                aria-label="Toggle Theme"
                             >
                                 {theme === "dark" ? <HiOutlineSun className="w-5 h-5" /> : <HiOutlineMoon className="w-5 h-5" />}
                             </button>
                         )}
                         <button
                             onClick={() => setMenuOpen(!menuOpen)}
-                            className="text-surface-700 dark:text-surface-300 hover:text-surface-900 dark:text-white p-2"
+                            className="text-surface-700 dark:text-surface-300 hover:text-surface-900 dark:text-white p-2.5 rounded-xl bg-surface-200/50 dark:bg-surface-800/40 border border-surface-300 dark:border-surface-700/50 transition-colors active:scale-95"
+                            aria-label="Toggle Menu"
                         >
                             {menuOpen ? <HiOutlineX className="w-6 h-6" /> : <HiOutlineMenu className="w-6 h-6" />}
                         </button>

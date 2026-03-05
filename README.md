@@ -17,7 +17,9 @@ A full-stack web application for students to share, discover, and download study
 - 💬 **Comments** — Discuss and review notes
 - 👑 **Admin Panel** — Manage notes, users, view stats
 - 🌓 **Dynamic Theme** — Optimized Light and Dark modes with glassmorphism
-- 📱 **Responsive** — Full mobile & desktop compatibility
+- 📱 **Mobile-First Design** — Premium **Bottom Navigation** for effortless mobile browsing
+- ✨ **Rich Aesthetics** — Smooth animations, custom gradients, and backdrop blurs (Glassmorphism)
+- 🛡️ **Safe Areas** — Fully compatible with modern mobile devices and notch displays
 
 ---
 
@@ -41,6 +43,7 @@ Online Notes Website/
 │   ├── components/
 │   │   ├── Navbar.js
 │   │   ├── Footer.js
+│   │   ├── BottomNav.js         # Mobile navigation bar
 │   │   ├── NoteCard.js
 │   │   ├── SearchBar.js
 │   │   ├── RatingStars.js

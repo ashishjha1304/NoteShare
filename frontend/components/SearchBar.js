@@ -31,7 +31,7 @@ export default function SearchBar({ onSearch, placeholder = "Search notes by tit
                 />
                 <button
                     type="submit"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white text-sm font-semibold rounded-xl transition-all shadow-lg shadow-primary-500/20 hover:shadow-primary-500/30"
+                    className="absolute right-1.5 sm:right-2 top-1/2 -translate-y-1/2 px-4 sm:px-6 py-2 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white text-[12px] sm:text-sm font-bold rounded-xl transition-all shadow-lg shadow-primary-500/20 active:scale-95"
                 >
                     Search
                 </button>
